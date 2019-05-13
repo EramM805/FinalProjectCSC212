@@ -58,6 +58,6 @@ std::size_t next_index(std::size_t index) const;
 void find_index(int key, bool& found, std::size_t& index) const; 
 bool never_used(std::size_t index) const;
 bool is_vacant(std::size_t index) const;
-}; }
+}; } //testing
 #include "table1.template" // Include the implementation. 
 #endif
