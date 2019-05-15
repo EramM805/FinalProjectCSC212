@@ -1,4 +1,0 @@
-/mnt/c/Users/peter_92culm0/FinalProjectCSC212/build/CMakeFiles/rebuild_cache.dir
-/mnt/c/Users/peter_92culm0/FinalProjectCSC212/build/CMakeFiles/table1.dir
-/mnt/c/Users/peter_92culm0/FinalProjectCSC212/build/CMakeFiles/edit_cache.dir
-/mnt/c/Users/peter_92culm0/FinalProjectCSC212/build/CMakeFiles/blackjack.dir

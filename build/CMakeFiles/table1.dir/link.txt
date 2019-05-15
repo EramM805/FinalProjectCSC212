@@ -1,2 +1,0 @@
-/usr/bin/ar qc libtable1.a  CMakeFiles/table1.dir/blackjack.cpp.o
-/usr/bin/ranlib libtable1.a
