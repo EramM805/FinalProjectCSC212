@@ -16,7 +16,7 @@ namespace main_savitch_12A
     table<RecordType>::table( )
     {
         used = 0;
-        for (std::size_t i; i = 0; i < CAPACITY; ++i)
+        for (std::size_t i = 0;i < CAPACITY;i++ )
             data[i].key = NEVER_USED;  
     }
 

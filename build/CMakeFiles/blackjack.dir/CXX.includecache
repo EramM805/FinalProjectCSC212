@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/peter_92culm0/FinalProjectCSC212/blackjack.cpp
+cstdlib
+-
+iostream
+-
+string
+-
+table.h
+/mnt/c/Users/peter_92culm0/FinalProjectCSC212/table.h
+
+/mnt/c/Users/peter_92culm0/FinalProjectCSC212/table.h
+cstdlib
+-
+table1.template
+/mnt/c/Users/peter_92culm0/FinalProjectCSC212/table1.template
+
+/mnt/c/Users/peter_92culm0/FinalProjectCSC212/table1.template
+cassert
+-
+cstdlib
+-
+

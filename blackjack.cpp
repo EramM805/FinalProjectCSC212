@@ -21,7 +21,7 @@ void exitGame(){
         cin >> exitGame;
     } while (exitGame == 1);
     cout << "Thanks for playing!" << endl;
-    return EXIT_SUCCESS;
+    return;
 }
 
 void addplayercard(){
@@ -35,5 +35,5 @@ void adddealercard(){
 
 int main() {
     instruct ( );
-    
+    return 0;
 }
