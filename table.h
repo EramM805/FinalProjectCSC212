@@ -31,11 +31,11 @@
 #define TABLE1_H
 #include <cstdlib> // Provides size_t
 namespace main_savitch_12A {
-template <class RecordType> class table
+template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> class table
 {
 public:
 // MEMBER CONSTANT -- See Appendix E if this fails to compile.
- static const std::size_t CAPACITY = 811;
+ static const std::size_t CAPACITY = 20;
 // CONSTRUCTOR
 table( );
 // MODIFICATION MEMBER FUNCTIONS
@@ -58,6 +58,13 @@ std::size_t next_index(std::size_t index) const;
 void find_index(int key, bool& found, std::size_t& index) const; 
 bool never_used(std::size_t index) const;
 bool is_vacant(std::size_t index) const;
-}; } 
+}; }
+
+struct card {
+    int key;
+    int value;
+    
+    
+}; 
 #include "table1.template" // Include the implementation. 
 #endif

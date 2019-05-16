@@ -3,25 +3,26 @@
 
 namespace main_savitch_12A
 {
-    template <class RecordType>
-    const std::size_t table<RecordType>::CAPACITY; 
+    
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    const std::size_t table<RecordType,  TABLE_SIZE, hashkey> ::CAPACITY; 
 
-    template <class RecordType>
-    const int table<RecordType>::NEVER_USED;
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    const int table<RecordType, TABLE_SIZE, hashkey> ::NEVER_USED;
 
-    template <class RecordType>
-    const int table<RecordType>::PREVIOUSLY_USED;
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    const int table< RecordType, TABLE_SIZE, hashkey> ::PREVIOUSLY_USED;
 
-    template <class RecordType>
-    table<RecordType>::table( )
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    table<RecordType,TABLE_SIZE, hashkey> ::table( )
     {
         used = 0;
         for (std::size_t i = 0;i < CAPACITY;i++ )
-            data[i].key = NEVER_USED;  
+           data[i].key = NEVER_USED;  
     }
 
-    template <class RecordType>
-    void table<RecordType>::insert(const RecordType& entry)
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    void table<RecordType, TABLE_SIZE, hashkey> ::insert(const RecordType& entry)
     {
         bool already_present;   
         std::size_t index;        
@@ -42,8 +43,8 @@ namespace main_savitch_12A
         data[index] = entry;
     }
 
-    template <class RecordType>
-    void table<RecordType>::remove(int key)
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    void table<RecordType, TABLE_SIZE, hashkey> ::remove(int key)
     {
         bool found;        
         std::size_t index;   
@@ -56,8 +57,8 @@ namespace main_savitch_12A
         }
     }
 
-    template <class RecordType>
-    bool table<RecordType>::is_present(int key) const
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    bool table<RecordType, TABLE_SIZE, hashkey> ::is_present(int key) const
     {
         bool found;
         std::size_t index;
@@ -65,8 +66,8 @@ namespace main_savitch_12A
         return found;
     }
 
-    template <class RecordType>
-    void table<RecordType>::find(int key, bool& found, RecordType& result) const
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    void table<RecordType, TABLE_SIZE, hashkey> ::find(int key, bool& found, RecordType& result) const
     {
         std::size_t index;
 
@@ -76,20 +77,20 @@ namespace main_savitch_12A
             result = data[index];
     }
 
-    template <class RecordType>
-    inline std::size_t table<RecordType>::hash(int key) const
+   template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    inline std::size_t table<RecordType, TABLE_SIZE, hashkey> ::hash(int key) const
     {
         return (key % CAPACITY);
     }
 
-    template <class RecordType>
-    inline std::size_t table<RecordType>::next_index(std::size_t index) const
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    inline std::size_t table< RecordType, TABLE_SIZE,hashkey> ::next_index(std::size_t index) const
     {
         return ((index+1) % CAPACITY);
     }
 
-    template <class RecordType>
-    void table<RecordType>::find_index(int key, bool& found, std::size_t& i) const
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    void table< RecordType,  TABLE_SIZE, hashkey> ::find_index(int key, bool& found, std::size_t& i) const
     {
         std::size_t count; 
         count = 0;
@@ -102,14 +103,14 @@ namespace main_savitch_12A
         found = (data[i].key == key);
     }
 
-    template <class RecordType>
-    inline bool table<RecordType>::never_used(std::size_t index) const
+   template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    inline bool table< RecordType,  TABLE_SIZE, hashkey> ::never_used(std::size_t index) const
     {
         return (data[index].key == NEVER_USED);
     }
         
-    template <class RecordType>
-    inline bool table<RecordType>::is_vacant(std::size_t index) const
+    template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> 
+    inline bool table< RecordType,  TABLE_SIZE, hashkey> ::is_vacant(std::size_t index) const
     {
         return (data[index].key == NEVER_USED) || (data[index].key == PREVIOUSLY_USED);
     }
