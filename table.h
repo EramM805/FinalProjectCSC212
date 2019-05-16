@@ -30,6 +30,7 @@
 #ifndef TABLE1_H
 #define TABLE1_H
 #include <cstdlib> // Provides size_t
+#include "llist.h"
 namespace main_savitch_12A {
 template <class RecordType, size_t TABLE_SIZE,int hashkey(const RecordType&)> class table
 {
@@ -62,7 +63,7 @@ bool is_vacant(std::size_t index) const;
 
 struct card {
     int key;
-    int value;
+    nodespace::LList value;
     
     
 }; 

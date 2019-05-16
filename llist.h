@@ -39,7 +39,7 @@ namespace nodespace{
         
         //returns new list
         LList* copy();
-        std::list<std::tuple<node::value_type, int>> frequency(LList data);
+       // std::list<std::tuple<node::value_type, int>> frequency(LList data);
 
         //additional functions to index into list and overwrite node
         node* operator[] (size_t ind);

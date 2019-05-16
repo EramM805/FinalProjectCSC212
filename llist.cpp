@@ -154,7 +154,7 @@ namespace nodespace{
         return freq;
      
     };
-    */
+    
    std::list<std::tuple<node::value_type, int> > frequency(LList data){
         std::list<std::tuple<node::value_type, int> > freq;
         std::tuple<node::value_type, int> item;
@@ -183,6 +183,7 @@ namespace nodespace{
         }
         return freq;
      };
+     */
 
      
     
