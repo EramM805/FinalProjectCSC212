@@ -1,0 +1,4 @@
+/Users/fayeezus/finalprojectcsc212/build/CMakeFiles/rebuild_cache.dir
+/Users/fayeezus/finalprojectcsc212/build/CMakeFiles/edit_cache.dir
+/Users/fayeezus/finalprojectcsc212/build/CMakeFiles/blackjack.dir
+/Users/fayeezus/finalprojectcsc212/build/CMakeFiles/table1.dir
