@@ -56,10 +56,6 @@ void setup(){
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
-    cout << "Game Rules: Ace, Two, Three, Four, Five, Six, Seven, Eight, Nine are 4 Cards each. Ten is 16 cards because King, Queen and Jack count as Ten  " << endl;
-    int players;
-    cout << "How many players are playing?" << endl;
-    cin >> players;
 }
 void shuffle(int card[], int n){
     srand(time(0));
@@ -87,8 +83,9 @@ int main() {
     for (int i=0; i<52; i++)
     cout << a[i] << " "; 
     cout << endl;
-    cout << "The deck has been shuffled" << endl; 
+    cout << "The deck has been shuffled" << endl;  
     setup();
     //instruct ( );
     
     return 0;
+}
