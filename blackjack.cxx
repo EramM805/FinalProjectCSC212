@@ -49,14 +49,18 @@ void setup(){
      my_table.insert(data[8]);
      my_table.insert(data[9]);
      my_table.insert(data[10]);
-      my_table.insert(data[11]);
-       my_table.insert(data[12]);
+     my_table.insert(data[11]);
+     my_table.insert(data[12]);
     //std::cout<<my_table.is_present(12)<<std::endl;
 }
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
+    int players;
+    cout << "How many players are playing?" << endl;
+    cin >> players;
 }
+
 void shuffle(int card[], int n){
     srand(time(0));
     for (int i =0; i < n; i++){
@@ -69,8 +73,8 @@ void shuffle(int card[], int n){
 void exitGame(){
     int exitGame = 1;
     do {
-        cout << "Would you like to play again? (1 = Yes, 2 = No)" << endl;
-        cin >> exitGame;
+    cout << "Would you like to play again? (1 = Yes, 2 = No)" << endl;
+    cin >> exitGame;
     } while (exitGame == 1);
     cout << "Thanks for playing!" << endl;
     return;
