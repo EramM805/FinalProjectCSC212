@@ -11,7 +11,6 @@ int hashkey(const card& c) {
         return c.key; 
 }
 bool removetail(card c[], int key){
-    nodespace::node cursor;
     bool removed = false;
     std::cout<<c[key].value.length(c[key].value[0]);
         if(c[key].value.length(c[key].value[0])){
@@ -47,6 +46,8 @@ void setup(){
         data[key_local-1].value.append(key_local);
     }
     std::cout<<sum(data, data[1].value.length(data[1].value[0]), 1)<<std::endl;
+    std::cout << removetail(data, 1);
+    std::cout<<data[1].value.length(data[1].value[0]);
     //std::cout<<data[2].value.length(data[2].value[0])<<std::endl;
     //std::cout<<data[2].value[15]->data()<<std::endl;
 
@@ -88,6 +89,7 @@ int main() {
     // cout << "The deck has been shuffled" << endl;  
     setup();
     //instruct ( );
+    
     
     return 0;
 }

@@ -86,20 +86,28 @@ namespace nodespace{
         
     };
     bool LList::remove_tail(std::size_t position){
-        std::cout<<"here";
-        node *curr;
-        while(curr != NULL) {
-             if(curr->link() == NULL) { 
-              std::cout<<"here";
-                delete curr;
+        if(tail_ptr == NULL){
+            return false;
+        }
+        else{
+            if(head_ptr == tail_ptr){
+                head_ptr = NULL;
+                tail_ptr = NULL;
+                return false;
+            }
+            else{
+                nodespace::node *previous_ptr = head_ptr;
+                while(previous_ptr->link() != tail_ptr){
+                    previous_ptr = previous_ptr->link();
+                }
+                tail_ptr = previous_ptr;
+                previous_ptr = previous_ptr->link();
+                tail_ptr->set_link(NULL);
+                delete previous_ptr;
                 return true;
-             }
-             else{
-             curr = curr->link();
-             }
-       
-         }
-         return false;
+        }
+        }
+        return false;
     }
     
     void LList::clear(){
