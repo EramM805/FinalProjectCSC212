@@ -85,7 +85,23 @@ namespace nodespace{
         return true;
         
     };
-
+    bool LList::remove_tail(std::size_t position){
+        std::cout<<"here";
+        node *curr;
+        while(curr != NULL) {
+             if(curr->link() == NULL) { 
+              std::cout<<"here";
+                delete curr;
+                return true;
+             }
+             else{
+             curr = curr->link();
+             }
+       
+         }
+         return false;
+    }
+    
     void LList::clear(){
         list_clear(head_ptr);
         

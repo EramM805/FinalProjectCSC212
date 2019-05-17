@@ -9,7 +9,27 @@ using namespace main_savitch_12A;
 
 int hashkey(const card& c) {
         return c.key; 
-    } 
+}
+bool removetail(card c[], int key){
+    nodespace::node cursor;
+    bool removed = false;
+    std::cout<<c[key].value.length(c[key].value[0]);
+        if(c[key].value.length(c[key].value[0])){
+            removed = c[key].value.remove_tail(c[key].value.length(c[key].value[0]));
+        }
+        else{
+             std::cout<<hashkey(c[key])<<std::endl;
+            //throw std::out_of_range ("Key does not exist");
+        }
+    return removed;
+} 
+int sum(card c[], int length, int key){
+    int total = 0;
+    for(int i = 0; i < length; i++){
+        total = total + c[key].value[i]->data();
+    }
+    return total;
+}
 void setup(){
     //create linked list
     //create table
@@ -26,8 +46,9 @@ void setup(){
     for(int i = 0; i < 16; i++){
         data[key_local-1].value.append(key_local);
     }
-    std::cout<<key_local<<std::endl;
-    std::cout<<data[9].value[15]->data()<<std::endl;
+    std::cout<<sum(data, data[1].value.length(data[1].value[0]), 1)<<std::endl;
+    //std::cout<<data[2].value.length(data[2].value[0])<<std::endl;
+    //std::cout<<data[2].value[15]->data()<<std::endl;
 
 }
 

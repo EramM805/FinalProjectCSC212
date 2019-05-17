@@ -99,6 +99,7 @@ namespace nodespace
 	previous_ptr->set_link( remove_ptr->link( ) );
 	delete remove_ptr;
     }
+	
 
     void list_clear(node*& head_ptr)
     // Library facilities used: cstdlib

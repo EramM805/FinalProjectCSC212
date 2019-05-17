@@ -34,6 +34,7 @@ namespace nodespace{
         
         //remove by value, remove all
         bool remove(const node::value_type& target);
+        bool remove_tail(std::size_t position);
         void clear();
         
         

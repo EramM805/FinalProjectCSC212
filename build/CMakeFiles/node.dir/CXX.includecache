@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/eram/Documents/CSC212/Final Project/FinalProjectCSC212/node.cpp
+node.h
+/Users/eram/Documents/CSC212/Final Project/FinalProjectCSC212/node.h
+cassert
+-
+cstdlib
+-
+
+/Users/eram/Documents/CSC212/Final Project/FinalProjectCSC212/node.h
+cstdlib
+-
+map
+-
+iostream
+-
+

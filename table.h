@@ -64,8 +64,7 @@ bool is_vacant(std::size_t index) const;
 struct card {
     int key;
     nodespace::LList value;
-    
-    
+   
 }; 
 #include "table1.template" // Include the implementation. 
 #endif
