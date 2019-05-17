@@ -11,47 +11,24 @@ int hashkey(const card& c) {
         return c.key; 
     } 
 void setup(){
-    table<card, 13, hashkey> my_table;
-    card data[13];
-    data[0].key = 0;
-    data[0].value = 1;
-    data[1].key = 1;
-    data[1].value = 2;
-    data[2].key = 2;
-    data[2].value = 3;
-    data[3].key = 3;
-    data[3].value = 4;
-    data[4].key = 4;
-    data[4].value = 5;
-    data[5].key = 5;
-    data[5].value = 6;
-    data[6].key = 6;
-    data[6].value = 7;
-    data[7].key = 7;
-    data[7].value = 8;
-    data[8].key = 8;
-    data[8].value = 9;
-    data[9].key = 9;
-    data[9].value = 10;
-    data[10].key = 10;
-    data[10].value = 10;
-    data[11].key = 11;
-    data[11].value = 10;
+    //create linked list
+    //create table
+    //add linked list to table 
+    table<card, 11, hashkey> my_table;
+    int key_local;
+    card data[10];
+    data[0].key = key_local;
+    for(key_local = 1; key_local < 10; key_local++){
+        for(int i = 0; i < 4; i++){
+            data[key_local-1].value.append(key_local);
+        }
+    }
+    for(int i = 0; i < 16; i++){
+        data[key_local-1].value.append(key_local);
+    }
+    std::cout<<key_local<<std::endl;
+    std::cout<<data[9].value[15]->data()<<std::endl;
 
-     my_table.insert(data[0]);
-     my_table.insert(data[1]);
-     my_table.insert(data[2]);
-     my_table.insert(data[3]);
-     my_table.insert(data[4]);
-     my_table.insert(data[5]);
-     my_table.insert(data[6]);
-     my_table.insert(data[7]);
-     my_table.insert(data[8]);
-     my_table.insert(data[9]);
-     my_table.insert(data[10]);
-     my_table.insert(data[11]);
-     my_table.insert(data[12]);
-    //std::cout<<my_table.is_present(12)<<std::endl;
 }
 
 void instruct( ){
@@ -81,13 +58,13 @@ void exitGame(){
 }
 
 int main() {
-    cout << "Shuffling the deck.." << endl;
-    int a[] = {0, 1, 2, 3, 4, 5, 6 ,7 ,8, 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 ,47, 49, 50, 51};
-    shuffle (a, 52);
-    for (int i=0; i<52; i++)
-    cout << a[i] << " "; 
-    cout << endl;
-    cout << "The deck has been shuffled" << endl;  
+    // cout << "Shuffling the deck.." << endl;
+    // int a[] = {0, 1, 2, 3, 4, 5, 6 ,7 ,8, 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 ,47, 49, 50, 51};
+    // shuffle (a, 52);
+    // for (int i=0; i<52; i++)
+    // cout << a[i] << " "; 
+    // cout << endl;
+    // cout << "The deck has been shuffled" << endl;  
     setup();
     //instruct ( );
     
