@@ -48,7 +48,7 @@ void setup(){
     //create table
     //add linked list to table
     table<card, 11, hashkey> my_table;
-    int key_local;
+    int key_local=0;
     card data[10];
     data[0].key = key_local;
     for(key_local = 1; key_local < 10; key_local++){
@@ -110,17 +110,32 @@ void distribute(card player[], int key, card c[]){
         }
     }
 }
+void addDealer(int dealer){
+    table<card, 7, hashkey> my_table;
+    int numdealer=0;
+    card data[7];
+    data[1].key = numdealer;
+    for(numdealer = 1; numdealer <= dealer; numdealer++){
+        for(int i = 0; i < 3; i++){
+            data[numdealer-1].value.append(numdealer);
+        }
+    }
+    std::cout << "Dealer has the card:  " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
+}
 
 
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
     int players;
+    int dealer;
     do {
         cout << "How many players are playing?" << endl;
         cin >> players;
     } while (players == 1);
     addPlayers(players);
+    addDealer(dealer);
+    
     return;
     
 }
@@ -155,7 +170,7 @@ int main() {
     setup();
     instruct ( );
     //addPlayers();
-    exitGame();
+    //exitGame();
     
     
     return 0;
