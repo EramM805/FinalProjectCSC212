@@ -24,8 +24,22 @@ bool removetail(card c[], int key){
 }
 int sum(card c[], int length, int key){
     int total = 0;
+    int count_aces = 0;
     for(int i = 0; i < length; i++){
-        total = total + c[key].value[i]->data();
+        //If player draws an Ace and total is not over 21, the ace is considered to be 11.
+        if(c[key].value[i]->data() == 1){
+            total = total + 11;
+            count_aces++;
+        }
+        //If player does not draw an Ace.
+        else{
+            total = total + c[key].value[i]->data();
+        }
+        //Optimizes the total sum of the player's cards if player has aces and sum > 21.
+        if(total > 21 && count_aces >= 1){
+            total = total - 10;
+            count_aces--;
+        }
     }
     return total;
 }
@@ -73,6 +87,17 @@ void addPlayers(int players){
     std::cout << "Player 6 was assigned card: " <<sum(data, data[6].value.length(data[6].value[1]), 6)<< std::endl;
 }
 
+void initial_distribute(card players[], int numofplayers, card c[]){
+    for(int i = 1; i < numofplayers + 1; i++){
+        while(players[i].value.length(players[i].value[0]) != 2){
+            srand(time(0));
+            unsigned randomNumber = ( rand() % (10 - 1 + 1) ) + 1;
+            if(removetail(c, randomNumber)){
+                players[i].value.append(randomNumber);
+            }
+        }
+    }
+}
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
