@@ -112,7 +112,7 @@ void distribute(card player[], int key, card c[]){
 }
 void addDealer(int dealer){
     table<card, 7, hashkey> my_table;
-    int numdealer=0;
+    int numdealer=1;
     card data[7];
     data[1].key = numdealer;
     for(numdealer = 1; numdealer <= dealer; numdealer++){
@@ -135,7 +135,12 @@ void instruct( ){
     } while (players == 1);
     addPlayers(players);
     addDealer(dealer);
-    
+    int take = 1;
+    do {
+        cout << "Would you like to hit or stand? (1 = Hit, 2 = Stand" << endl;
+        cin >> take;
+    } while( take == 1);
+    cout << "Ok you choose to stand, now wait for your next turn" << endl;
     return;
     
 }
