@@ -1,0 +1,5 @@
+/Users/fayeezus/desktop/FinalProjectCSC212/build/CMakeFiles/rebuild_cache.dir
+/Users/fayeezus/desktop/FinalProjectCSC212/build/CMakeFiles/edit_cache.dir
+/Users/fayeezus/desktop/FinalProjectCSC212/build/CMakeFiles/blackjack.dir
+/Users/fayeezus/desktop/FinalProjectCSC212/build/CMakeFiles/llist.dir
+/Users/fayeezus/desktop/FinalProjectCSC212/build/CMakeFiles/node.dir

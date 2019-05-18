@@ -1,0 +1,2 @@
+/Library/Developer/CommandLineTools/usr/bin/ar qc libllist.a  CMakeFiles/llist.dir/llist.cpp.o
+/Library/Developer/CommandLineTools/usr/bin/ranlib libllist.a
