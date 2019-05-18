@@ -99,6 +99,20 @@ void initial_distribute(card players[], int numofplayers, card c[]){
     }
 }
 
+void distribute(card player[], int key, card c[]){
+    bool stopper = false;
+    while(stopper == true){
+        srand(time(0));
+        unsigned randomNumber = ( rand() % (10 - 1 + 1) ) + 1;
+        if(removetail(c, randomNumber)){
+            player[key].value.append(randomNumber);
+            stopper = true;
+        }
+    }
+}
+
+
+
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
     int players;
