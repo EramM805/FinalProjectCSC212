@@ -123,7 +123,14 @@ void addDealer(int dealer){
     std::cout << "Dealer has the card:  " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
 }
 
-
+void scoreboard(card score[], int sum, int key){
+    if(sum > 21){
+        score[key].value.append(0); 
+    }
+    else{
+        score[key].value.append(sum);
+    }
+}
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
@@ -145,13 +152,13 @@ void instruct( ){
     
 }
 
-void shuffle(int card[], int n){
+/*void shuffle(int card[], int n){
     srand(time(0));
     for (int i =0; i < n; i++){
         int r = i + (rand() % (52-i));
         swap(card[i], card[r]);
     }
-}
+}*/
 
 
 void exitGame(){
