@@ -140,6 +140,16 @@ void instruct( ){
         cout << "How many players are playing?" << endl;
         cin >> players;
     } while (players == 1);
+    //Declares score table
+    table<card, 7, hashkey> score_board;
+    int numscores=0;
+    card scores[7];
+    scores[1].key = numscores;
+    
+    //after we get the sums use this in a for loop
+    scoreboard(scores, sum(player_table, player_data[1].value.length(data[1].value[0]), 1 /*index of the player (i.e. player 1 or 2)*/);
+
+
     addPlayers(players);
     addDealer(dealer);
     int take = 1;
