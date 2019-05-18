@@ -45,24 +45,24 @@ void setup(){
     for(int i = 0; i < 16; i++){
         data[key_local-1].value.append(key_local);
     }
-    std::cout<<sum(data, data[1].value.length(data[1].value[0]), 1)<<std::endl;
-    std::cout << removetail(data, 1);
-    std::cout<<data[1].value.length(data[1].value[0]);
+    // std::cout<<sum(data, data[1].value.length(data[1].value[0]), 1)<<std::endl;
+    // std::cout << removetail(data, 1);
+    // std::cout<<data[1].value.length(data[1].value[0]);
     //std::cout<<data[2].value.length(data[2].value[0])<<std::endl;
     //std::cout<<data[2].value[15]->data()<<std::endl;
     
 }
 
-void addPlayers(){
+void addPlayers(int players){
     //hash table for amount of players
     //key is the player number and value is linked list of cards
     table<card, 7, hashkey> my_table;
-    int players=0;
+    int numplayers=0;
     card data[7];
-    data[1].key = players;
-    for(players = 1; players <= 7; players++){
+    data[1].key = numplayers;
+    for(numplayers = 1; numplayers <= players; numplayers++){
         for(int i = 0; i < 3; i++){
-            data[players-1].value.append(players);
+            data[numplayers-1].value.append(numplayers);
         }
     }
     std::cout << "Player 1 was assigned card: " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
@@ -81,7 +81,7 @@ void instruct( ){
         cout << "How many players are playing?" << endl;
         cin >> players;
     } while (players == 1);
-    addPlayers();
+    addPlayers(players);
     return;
     
 }
