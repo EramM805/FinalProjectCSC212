@@ -1,6 +1,8 @@
 Faez Farhad
 
  For the final project for CSC212 class my group decided to make a blackjack playable game in c++ using hash tables. I collaborated with Eram and Peter and we all split the work among each other to have a working playable game. I was responsible for working with blackjack.cxx file and I added players in the game and assigned them random cards from the card distribution that Peter implemented. I added the instructions for when the user starts the game and for when the user exits the game. I also implemented the dealer part of the game which shows which card the dealer has to compare with the players card. I also added the function where when the user is playing the game, it asks the player if he would like to hit or stand.  
+ 
     Eram implemented the header files and the template files, she also worked with finding the sum of the cards and setting up the table and linkedlist. 
     Peter added the cmake files to run the program and added the destribution of cards function 
+  
   The sources we gathered information from were Data Structures and Other Objects Using C++ book, Google for finding the blackjack game rules and class notes for implementing linked list. Overall, this is was a very fun project to create and we all had fun while making the project, it is playable so when I am free. I will definitely be playing the game because I enjoy playing cards game and blackjack is one of them for sure. 
