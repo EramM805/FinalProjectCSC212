@@ -65,12 +65,12 @@ void addPlayers(){
             data[players-1].value.append(players);
         }
     }
-    std::cout << "Player 1 was assigned card: " <<sum(data, data[1].value.length(data[0].value[0]), 1)<< std::endl;
-    std::cout << "Player 2 was assigned card: " <<sum(data, data[2].value.length(data[0].value[0]), 2)<< std::endl;
-    std::cout << "Player 3 was assigned card: " <<sum(data, data[3].value.length(data[0].value[0]), 3)<< std::endl;
-    std::cout << "Player 4 was assigned card: " <<sum(data, data[4].value.length(data[0].value[0]), 4)<< std::endl;
+    std::cout << "Player 1 was assigned card: " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
+    std::cout << "Player 2 was assigned card: " <<sum(data, data[2].value.length(data[2].value[1]), 2)<< std::endl;
+    std::cout << "Player 3 was assigned card: " <<sum(data, data[3].value.length(data[3].value[0]), 3)<< std::endl;
+    std::cout << "Player 4 was assigned card: " <<sum(data, data[4].value.length(data[0].value[1]), 4)<< std::endl;
     std::cout << "Player 5 was assigned card: " <<sum(data, data[5].value.length(data[0].value[0]), 5)<< std::endl;
-    std::cout << "Player 6 was assigned card: " <<sum(data, data[6].value.length(data[0].value[0]), 6)<< std::endl;
+    std::cout << "Player 6 was assigned card: " <<sum(data, data[6].value.length(data[0].value[1]), 6)<< std::endl;
 }
 
 
