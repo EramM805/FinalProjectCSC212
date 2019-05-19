@@ -66,7 +66,23 @@ void setup(card data[]){
     //std::cout<<data[2].value[15]->data()<<std::endl;
     
 }
-
+//destructing players, card and deck when we replaying
+void destructor(card playerss[], card dealer[], card data[]){
+    dealer[0].value = NULL;
+    dealer[0].key = NULL;
+    data[0].key = NULL;
+    data[0].value = NULL;
+    int key_local=0;
+    for(int i = 1; key_local <= 10; key_local++){
+        data[key_local-1].value = NULL;
+        data[key_local-1].key = NULL;
+    }
+    for(int i = 0; i < 7; i++){
+        playerss[i+1].key = NULL;
+        playerss[i+1].value = NULL;
+    }  
+    
+}   
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 0; i < numofplayers; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
