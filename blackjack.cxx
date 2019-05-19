@@ -68,8 +68,8 @@ void setup(card data[]){
 }
 //destructing players, card and deck when we replaying
 void destructor(card playerss[], card dealer[], card data[]){
-    dealer[0].value = NULL;
-    dealer[0].key = NULL;
+    dealer[1].value = NULL;
+    dealer[1].key = NULL;
     data[0].key = NULL;
     data[0].value = NULL;
     int key_local=0;
