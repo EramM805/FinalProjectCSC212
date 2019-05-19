@@ -67,26 +67,6 @@ void setup(){
     
 }
 
-void addPlayers(int players){
-    //hash table for amount of players
-    //key is the player number and value is linked list of cards
-    table<card, 7, hashkey> my_table;
-    int numplayers=0;
-    card data[7];
-    data[1].key = numplayers;
-    for(numplayers = 1; numplayers <= players; numplayers++){
-        for(int i = 0; i < 3; i++){
-            data[numplayers-1].value.append(numplayers);
-        }
-    }
-    std::cout << "Player 1 was assigned card: " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
-    std::cout << "Player 2 was assigned card: " <<sum(data, data[2].value.length(data[2].value[1]), 2)<< std::endl;
-    std::cout << "Player 3 was assigned card: " <<sum(data, data[3].value.length(data[3].value[0]), 3)<< std::endl;
-    std::cout << "Player 4 was assigned card: " <<sum(data, data[4].value.length(data[4].value[1]), 4)<< std::endl;
-    std::cout << "Player 5 was assigned card: " <<sum(data, data[5].value.length(data[5].value[0]), 5)<< std::endl;
-    std::cout << "Player 6 was assigned card: " <<sum(data, data[6].value.length(data[6].value[1]), 6)<< std::endl;
-}
-
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 1; i < numofplayers + 1; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
@@ -110,17 +90,36 @@ void distribute(card player[], int key, card c[]){
         }
     }
 }
-void addDealer(int dealer){
-    table<card, 7, hashkey> my_table;
+void addPlayers(card players[], int key, card c[]){
+    //hash table for amount of players
+    //key is the player number and value is linked list of cards
+    table<card, 7, hashkey> player_table;
+    int numplayers=0;
+    card data[7];
+    data[1].key = numplayers;
+    for(numplayers = 1; numplayers < key; numplayers++){
+        for(int i = 0; i < 3; i++){
+            data[numplayers-1].value.append(numplayers);
+        }
+    }
+    std::cout << "Player 1 was assigned card: " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
+    std::cout << "Player 2 was assigned card: " <<sum(data, data[2].value.length(data[2].value[1]), 2)<< std::endl;
+    std::cout << "Player 3 was assigned card: " <<sum(data, data[3].value.length(data[3].value[0]), 3)<< std::endl;
+    std::cout << "Player 4 was assigned card: " <<sum(data, data[4].value.length(data[4].value[1]), 4)<< std::endl;
+    std::cout << "Player 5 was assigned card: " <<sum(data, data[5].value.length(data[5].value[0]), 5)<< std::endl;
+    std::cout << "Player 6 was assigned card: " <<sum(data, data[6].value.length(data[6].value[1]), 6)<< std::endl;
+}
+void addDealer(card dealer[], int key, card c[]){
+    table<card, 1, hashkey> dealer_table;
     int numdealer=1;
     card data[7];
-    data[1].key = numdealer;
-    for(numdealer = 1; numdealer <= dealer; numdealer++){
+    dealer[1].key = numdealer;
+    for(numdealer = 1; numdealer <= key; numdealer++){
         for(int i = 0; i < 3; i++){
             data[numdealer-1].value.append(numdealer);
         }
     }
-    std::cout << "Dealer has the card:  " <<sum(data, data[1].value.length(data[1].value[0]), 1)<< std::endl;
+    std::cout << "Dealer has the card:  " <<sum(dealer, dealer[1].value.length(data[1].value[0]), 1)<< std::endl;
 }
 
 void scoreboard(card score[], int sum, int key){
@@ -134,12 +133,29 @@ void scoreboard(card score[], int sum, int key){
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
-    int players;
-    int dealer;
+    int playerss
     do {
         cout << "How many players are playing?" << endl;
-        cin >> players;
+        cin >> playerss;
     } while (players == 1);
+    //declares the setup
+    table<card, 11, hashkey> my_table;
+    int key_local=0;
+    card data[10];
+    data[1].key = key_local;
+    
+    //declares the players
+    //addPlayers(players);
+    table<card, 7, hashkey> player_table;
+    int numplayers=0;
+    card players[7];
+    players[1].key = numplayers;
+    //declares the dealer
+    //addDealer(dealer);
+    table<card, 1, hashkey> dealer_table;
+    int numdealer=1;
+    card dealer[7];
+    dealer[1].key = numdealer;
     //Declares score table
     table<card, 7, hashkey> score_board;
     int numscores=0;
@@ -147,11 +163,7 @@ void instruct( ){
     scores[1].key = numscores;
     
     //after we get the sums use this in a for loop
-    scoreboard(scores, sum(player_table, player_data[1].value.length(data[1].value[0]), 1 /*index of the player (i.e. player 1 or 2)*/);
-
-
-    addPlayers(players);
-    addDealer(dealer);
+    scoreboard(scores, sum(player_table, players[1].value.length(data[1].value[0]), 1 /*index of the player (i.e. player 1 or 2)*/);
     int take = 1;
     do {
         cout << "Would you like to hit or stand? (1 = Hit, 2 = Stand" << endl;
