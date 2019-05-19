@@ -67,22 +67,23 @@ void setup(card data[]){
     
 }
 //destructing players, card and deck when we replaying
-void destructor(card playerss[], card dealer[], card data[]){
-    dealer[1].value = NULL;
-    dealer[1].key = NULL;
-    data[0].key = NULL;
-    data[0].value = NULL;
+/*/ void destructor(card playerss[], card dealer[], card data[]){
+    dealer[1].value = 0;
+    dealer[1].key = 0;
+    data[0].key = 0;
+    data[0].value = 0;
     int key_local=0;
     for(int i = 1; key_local <= 10; key_local++){
-        data[key_local-1].value = NULL;
-        data[key_local-1].key = NULL;
+        data[key_local-1].value = 0;
+        data[key_local-1].key = 0;
     }
     for(int i = 0; i < 7; i++){
-        playerss[i+1].key = NULL;
-        playerss[i+1].value = NULL;
+        playerss[i+1].key = 0;
+        playerss[i+1].value = 0;
     }  
-    
-}   
+
+}
+/*/
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 0; i < numofplayers; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
@@ -167,7 +168,7 @@ void show_player_hand(card player[], int key){
 void decision(card player[], int key, card c[]){
     int decision;
     do {
-        std::cout << "Player " << key+1 <<", would you like to stand or hit? (0 or 1)" << endl;
+        std::cout << "Player " << key+1 <<", would you like to stand or hit? (0 = stand or 1 = hit)" << endl;
         std::cin >> decision;
         if(decision == 1){
             distribute(player, key, c);
@@ -185,7 +186,7 @@ void decision(card player[], int key, card c[]){
 void decision_dealer(card dealer[], int key, card c[]){
     int decision;
     do {
-        std::cout << "Dealer, would you like to stand or hit? (0 or 1)" << endl;
+        std::cout << "Dealer, would you like to stand or hit? (0 = stand or 1 = hit)" << endl;
         std::cin >> decision;
         if(decision == 1){
         distribute(dealer, key, c);
@@ -340,8 +341,9 @@ void instruct( ){
 void exitGame(){
     int exitGame = 1;
     do {
-        cout << "Would you like to play again? (1 = Yes, 2 = No)" << endl;
+        cout << "Would you like to play again? (Press Any Number = Yes, CNTL+Z = No)" << endl;
         cin >> exitGame;
+    instruct();
     } while (exitGame == 1);
     cout << "Thanks for playing!" << endl;
     return;
@@ -357,7 +359,7 @@ int main() {
     // cout << "The deck has been shuffled" << endl;
     instruct ( );
     //addPlayers();
-    //exitGame();
+    exitGame();
     
     
     return 0;
