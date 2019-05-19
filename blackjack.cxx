@@ -119,7 +119,7 @@ void addDealer(card dealer[], int key, card c[]){
             data[numdealer-1].value.append(numdealer);
         }
     }
-    std::cout << "Dealer has the card:  " <<sum(dealer, dealer[1].value.length(data[1].value[0]), 1)<< std::endl;
+    std::cout << "Dealer has the card:  " <<sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1)<< std::endl;
 }
 
 void scoreboard(card score[], int sum, int key){
@@ -133,11 +133,11 @@ void scoreboard(card score[], int sum, int key){
 
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
-    int playerss
+    int playerss;
     do {
         cout << "How many players are playing?" << endl;
         cin >> playerss;
-    } while (players == 1);
+    } while (playerss == 1);
     //declares the setup
     table<card, 11, hashkey> my_table;
     int key_local=0;
