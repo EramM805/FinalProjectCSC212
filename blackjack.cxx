@@ -67,23 +67,13 @@ void setup(card data[]){
     
 }
 //destructing players, card and deck when we replaying
-/*/ void destructor(card playerss[], card dealer[], card data[]){
-    dealer[1].value = 0;
-    dealer[1].key = 0;
-    data[0].key = 0;
-    data[0].value = 0;
-    int key_local=0;
-    for(int i = 1; key_local <= 10; key_local++){
-        data[key_local-1].value = 0;
-        data[key_local-1].key = 0;
-    }
-    for(int i = 0; i < 7; i++){
-        playerss[i+1].key = 0;
-        playerss[i+1].value = 0;
-    }  
-
+ void destructor(card playerss[], card dealer[], card data[], card scores[]){
+     delete playerss;
+     delete dealer;
+     delete data;
+     delete scores;
 }
-/*/
+
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 0; i < numofplayers; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
@@ -329,7 +319,7 @@ int main() {
         while (play_again)
         {
             instruct();
-            std::cout << "\n Would you like to play again? (y / n) ";
+            std::cout << "Would you like to play again? (y / n) ";
             char answer;
             std::cin >> answer;
             if (tolower(answer) != 'y')
