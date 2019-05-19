@@ -316,50 +316,30 @@ void instruct( ){
         }
     }
 
-
-    //after we get the sums use this in a for loop
-    //scoreboard(scores, sum(player_table, players[1].value.length(data[1].value[0]), 1 /*index of the player (i.e. player 1 or 2)*/);
-    /*int take = 1;
-    do {
-        cout << "Would you like to hit or stand? (1 = Hit, 2 = Stand" << endl;
-        cin >> take;
-    } while( take == 1);
-    cout << "Ok you choose to stand, now wait for your next turn" << endl;*/
     return;
     
 }
 
-/*void shuffle(int card[], int n){
-    srand(time(0));
-    for (int i =0; i < n; i++){
-        int r = i + (rand() % (52-i));
-        swap(card[i], card[r]);
-    }
-}*/
-
-
-void exitGame(){
-    int exitGame = 1;
-    do {
-        cout << "Would you like to play again? (Press Any Number = Yes, CNTL+Z = No)" << endl;
-        cin >> exitGame;
-    instruct();
-    } while (exitGame == 1);
-    cout << "Thanks for playing!" << endl;
-    return;
-}
 
 int main() {
-    // cout << "Shuffling the deck.." << endl;
-    // int a[] = {0, 1, 2, 3, 4, 5, 6 ,7 ,8, 9 , 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25,26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46 ,47, 49, 50, 51};
-    // shuffle (a, 52);
-    // for (int i=0; i<52; i++)
-    // cout << a[i] << " ";
-    // cout << endl;
-    // cout << "The deck has been shuffled" << endl;
-    instruct ( );
+    //instruct ( );
     //addPlayers();
-    exitGame();
+    {
+        bool play_again = true;
+        while (play_again)
+        {
+            instruct();
+            std::cout << "\n Would you like to play again? (y / n) ";
+            char answer;
+            std::cin >> answer;
+            if (tolower(answer) != 'y')
+            {
+                play_again = false;
+                std::cout << "Thanks for playing Blackjack!" << endl;
+            }
+        }
+        return 0;
+    }
     
     
     return 0;
