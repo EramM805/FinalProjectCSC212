@@ -281,7 +281,7 @@ void instruct( ){
     //Prints Scoreboard
     for(int r = 0; r < playerss; r++){
         if(scores[r].value[0]->data() == 0){
-            cout << "Player " << r+1 << ":" << "BUSTED!" << endl;
+            cout << "Player " << r+1 << ": " << "BUSTED!" << endl;
         }
         else{
             cout << "Player " << r+1 << ":" << scores[r].value[0]->data();
@@ -291,7 +291,7 @@ void instruct( ){
             else if(sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) > 21){
                 cout << "\t WINNER!" << endl;
             }
-            else{cout << endl;}
+            else{cout << "\t LOSER! :(" << endl;}
         }
     }
 
