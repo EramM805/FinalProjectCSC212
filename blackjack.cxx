@@ -257,10 +257,14 @@ void instruct( ){
         std::cout << "Dealer NOW HAS:";
         show_player_hand(dealer, 1);
         std::cout << endl;
-        if(sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) <= 21){
+        if(sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) < 21){
             std::cout << "New Total:" << sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) << endl;
             //Dealer will decide to hit or stand
             decision_dealer(dealer, 1, data);
+        }
+        else if(sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) == 21){
+            std::cout << "New Total:" << sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1) << endl;
+            cout << "The dealer has won." << endl;
         }
         else{
             std::cout << "The Dealer has busted!";
