@@ -1,16 +1,9 @@
-Our project was to implement blackjack, a card game using hashmaps and linked list(for chaining). We implemented three hashmaps with the following roles:
-Deck : This hashmap stores a key and a linked list. The goal of this map is to store the values of the deck.
-Players: This hashmap stores the cards of the players.
-Scoreboard: This hashmap stores the values of the scoreboard.
+Our project was to implement blackjack, a card game using hashmaps and linked list(for chaining). We implemented three hashmaps with the following roles: Deck : This hashmap stores a key and a linked list. The goal of this map is to store the values of the deck, Players: This hashmap stores the cards of the players, Scoreboard: This hashmap stores the values of the scoreboard.
 
 The linked list class we use is from homework 3. 
 The access types for all of the functions are public. 
 The time complexity for the functions are as follows:
-Setup: O(n^3)
-Sum : O(n)
-Card distribution : O(n)
-Players/Dealers : O(n^2)
-Instruct: O(n^4)
+Setup: O(n^3), Sum : O(n), Card distribution : O(n), Players/Dealers : O(n^2), Instruct: O(n^4)
 
 We used the implementation from the textbook but ended up making our own functions because our needs were different. 
 
