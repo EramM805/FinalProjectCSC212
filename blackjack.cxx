@@ -9,6 +9,7 @@ using namespace main_savitch_12A;
 int hashkey(const card& c) {
     return c.key;
 }
+//used to remove the last card
 bool removetail(card c[], int key){
     bool removed = false;
     if(c[key].value.length(c[key].value[0])){
@@ -19,6 +20,7 @@ bool removetail(card c[], int key){
     }
     return removed;
 }
+//table to setup the project
 void setup(card data[]){
     //create linked list
     //create table
@@ -36,6 +38,7 @@ void setup(card data[]){
         data[key_local-1].value.append(key_local);
     }
 }
+//sums up all the card total for each player
 int sum(card c[], int length, int key){
     int total = 0;
     int count_aces = 0;
@@ -57,6 +60,7 @@ int sum(card c[], int length, int key){
     }
     return total;
 }
+//destributes the card at the beginning of the game
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 0; i < numofplayers; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
@@ -68,7 +72,7 @@ void initial_distribute(card players[], int numofplayers, card c[]){
         }
     }
 }
-
+//to distribute cards after first distribute, basically to keep the game going until theres a winner/loser
 void distribute(card player[], int key, card c[]){
     bool stopper = false;
     while(stopper == false){
@@ -89,7 +93,7 @@ void distribute(card player[], int key, card c[]){
      delete data;
      delete scores;
 }
-
+//adds the dealer to the game, then goes to show which card the dealer has
 void addDealer(card dealer[], int key, card c[]){
     table<card, 1, hashkey> dealer_table;
     int numdealer=1;
@@ -102,7 +106,7 @@ void addDealer(card dealer[], int key, card c[]){
     }
     std::cout << "Dealer has the card:  " <<sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1)<< std::endl;
 }
-
+//distributes the dealer card
 void init_distribute_dealer(card dealer[], card c[]){
     while(dealer[1].value.length(dealer[1].value[0]) != 2){
             srand(time(0));
@@ -112,7 +116,7 @@ void init_distribute_dealer(card dealer[], card c[]){
             }
         }
 }
-
+// asks the player if they would like to stand or hit and then shows the total sum for that player, if the sum is equal or more than 21, it says player has been busted.
 void decision(card player[], int key, card c[]){
     int decision;
     do {
@@ -130,7 +134,7 @@ void decision(card player[], int key, card c[]){
         }
     } while (decision == 1);
 }
-
+//checks the decision dealer will like to take, stand or hit then checks the sum for dealer just like it checked for the player, then shows if dealer has been busted
 void decision_dealer(card dealer[], int key, card c[]){
     int decision;
     do {
@@ -148,6 +152,7 @@ void decision_dealer(card dealer[], int key, card c[]){
         }
     } while (decision == 1);
 }
+//shows the score for each player
 void scoreboard(card score[], int sum, int key){
     if(sum > 21){
         score[key].value.append(0);
@@ -156,13 +161,13 @@ void scoreboard(card score[], int sum, int key){
         score[key].value.append(sum);
     }
 }
-
+//shows the card player has in hand
 void show_player_hand(card player[], int key){
     for(unsigned int j = 0; j < player[key].value.length(player[key].value[0]); j++){
         std::cout << " " << player[key].value[j]->data();
     }
 }
-
+// main part of the project, asks how many players are playing the game, has 4 tables, 1 for setup, 1 for players, 1 for dealer, and 1 to keep track of the score. it then shuffles the deck and creates a full deck of cards, distributes to cards to the player and 2 cards to the dealer. It reveals dealers first card, then goes to reveal players hand and asks if the user would like the player to hit or stand. If the dealer has 16 or less it asks the dealer to redraw the card and then shows which is the current card in dealers hand. We then generate a scoreboard and print it to show the current score and then display whether the player or dealer won,lost, or busted.
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
     int playerss;
@@ -279,6 +284,7 @@ void instruct( ){
     return;
     
 }
+//used to play the game again or simply exit the program
 int main() {
         bool play_again = true;
         while (play_again)
