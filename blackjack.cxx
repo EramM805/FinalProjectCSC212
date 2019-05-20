@@ -20,7 +20,7 @@ bool removetail(card c[], int key){
     }
     return removed;
 }
-//table to setup the project
+//table to setup the project. The time complexity for setup part is O(n^3)
 void setup(card data[]){
     //create linked list
     //create table
@@ -38,7 +38,7 @@ void setup(card data[]){
         data[key_local-1].value.append(key_local);
     }
 }
-//sums up all the card total for each player
+//sums up all the card total for each player. The time complexity for sum part is O(n)
 int sum(card c[], int length, int key){
     int total = 0;
     int count_aces = 0;
@@ -60,7 +60,7 @@ int sum(card c[], int length, int key){
     }
     return total;
 }
-//destributes the card at the beginning of the game
+//destributes the card at the beginning of the game. The time complexity for initial distribute part is O(n)
 void initial_distribute(card players[], int numofplayers, card c[]){
     for(int i = 0; i < numofplayers; i++){
         while(players[i].value.length(players[i].value[0]) != 2){
@@ -93,7 +93,7 @@ void distribute(card player[], int key, card c[]){
      delete data;
      delete scores;
 }
-//adds the dealer to the game, then goes to show which card the dealer has
+//adds the dealer to the game, then goes to show which card the dealer has. The time complexity for adding dealer part is O(n^2)
 void addDealer(card dealer[], int key, card c[]){
     table<card, 1, hashkey> dealer_table;
     int numdealer=1;
@@ -168,6 +168,7 @@ void show_player_hand(card player[], int key){
     }
 }
 // main part of the project, asks how many players are playing the game, has 4 tables, 1 for setup, 1 for players, 1 for dealer, and 1 to keep track of the score. it then shuffles the deck and creates a full deck of cards, distributes to cards to the player and 2 cards to the dealer. It reveals dealers first card, then goes to reveal players hand and asks if the user would like the player to hit or stand. If the dealer has 16 or less it asks the dealer to redraw the card and then shows which is the current card in dealers hand. We then generate a scoreboard and print it to show the current score and then display whether the player or dealer won,lost, or busted.
+//The time complexity for instruct part is O(n^4)
 void instruct( ){
     cout << "Welcome to Blackjack Game program!" << endl;
     int playerss;
