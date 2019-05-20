@@ -16,8 +16,5 @@ We used the implementation from the textbook but ended up making our own functio
 
 I initially had the idea of implementing this game when I realized it was a game where we need to store values of the cards based of the type. The reason why we used hashmaps was because our access would be O(1) and we needed fast access time. We decided to use linked list for chaining because insertion and removal will take less time than a array.
 
-Our sources for the project are: 
-Data Structures and Other Objects Using C++ book
-Google
-Stack Overflow
+Our sources for the project are: Data Structures and Other Objects Using C++ book, Google, Stack Overflow
 
