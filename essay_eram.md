@@ -11,3 +11,11 @@ I initially had the idea of implementing this game when I realized it was a game
 
 Our sources for the project are: Data Structures and Other Objects Using C++ book, Google, Stack Overflow
 
+My contrubutions for the porject is as follows:
+Implementaion,
+Linking Linked list with hashtables and writing functions for insertion and removal,
+Indexing of hash tables,
+Remove tail ptr,
+Summing, 
+Setting up the deck,
+Test implementation
