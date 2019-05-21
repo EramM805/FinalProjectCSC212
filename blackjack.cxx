@@ -12,8 +12,8 @@ int hashkey(const card& c) {
 //used to remove the last card
 bool removetail(card c[], int key){
     bool removed = false;
-    if(c[key].value.length(c[key].value[0])){
-        removed = c[key].value.remove_tail(c[key].value.length(c[key].value[0]));
+    if(c[key-1].value.length(c[key-1].value[0])){
+        removed = c[key-1].value.remove_tail(c[key-1].value.length(c[key-1].value[0]));
     }
     else{
         return removed;
