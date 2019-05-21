@@ -93,19 +93,7 @@ void distribute(card player[], int key, card c[]){
      delete data;
      delete scores;
 }
-//adds the dealer to the game, then goes to show which card the dealer has. The time complexity for adding dealer part is O(n^2)
-void addDealer(card dealer[], int key, card c[]){
-    table<card, 1, hashkey> dealer_table;
-    int numdealer=1;
-    card data[7];
-    dealer[1].key = numdealer;
-    for(numdealer = 1; numdealer <= key; numdealer++){
-        for(int i = 0; i < 3; i++){
-            data[numdealer-1].value.append(numdealer);
-        }
-    }
-    std::cout << "Dealer has the card:  " <<sum(dealer, dealer[1].value.length(dealer[1].value[0]), 1)<< std::endl;
-}
+
 //distributes the dealer card
 void init_distribute_dealer(card dealer[], card c[]){
     while(dealer[1].value.length(dealer[1].value[0]) != 2){
@@ -252,7 +240,7 @@ void instruct( ){
             cout << "The dealer has won." << endl;
         }
         else{
-            std::cout << "The Dealer has been busted!";
+            std::cout << "The Dealer has been busted!" << endl;
 
         }
     }
