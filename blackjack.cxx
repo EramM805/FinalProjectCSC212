@@ -72,7 +72,7 @@ void initial_distribute(card players[], int numofplayers, card c[]){
         }
     }
 }
-//to distribute cards after first distribute, basically to keep the game going until theres a winner/loser
+//to distribute cards after first distribute, basically to keep the game going until there's a winner/loser
 void distribute(card player[], int key, card c[]){
     bool stopper = false;
     while(stopper == false){
