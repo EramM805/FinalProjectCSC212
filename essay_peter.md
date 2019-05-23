@@ -25,4 +25,8 @@ The objective of this project was to implement a chained hash table for the crea
 -	Adjusted and debugged functions throughout the program.
 -	Established ways of comparing dealer’s hand and the players’ hands.
 
-Link to Github Repository - https://github.com/EramM805/FinalProjectCSC212
+### Link to Github Repository - 
+https://github.com/EramM805/FinalProjectCSC212
+
+### Resources Used: 
+- Data Structures and Other Objects Using C++ book
