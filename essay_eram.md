@@ -3,7 +3,7 @@ Our project was to implement blackjack, a card game using hashmaps and linked li
 The linked list class we use is from homework 3. 
 The access types for all of the functions are public. 
 The time complexity for the functions are as follows:
-Setup: O(n^3), Sum : O(n), Card distribution : O(n), Players/Dealers : O(n^2), Instruct: O(n^4)
+Setup: O(n^2), Sum : O(n), Card distribution : O(n), Players/Dealers : O(n^2), Instruct: O(n^2)
 
 We used the implementation from the textbook but ended up making our own functions because our needs were different. 
 
@@ -18,4 +18,4 @@ Indexing of hash tables,
 Remove tail ptr,
 Summing, 
 Setting up the deck,
-Test implementation
+Testing implementation
