@@ -1,4 +1,4 @@
-Our project was to implement blackjack, a card game using hashmaps and linked list(for chaining). We implemented three hashmaps with the following roles:<br> Deck : This hashmap stores a key and a linked list. The goal of this map is to store the values of the deck <br> Players: This hashmap stores the cards of the players <br> Scoreboard: This hashmap stores the values of the scoreboard. <br>Dealer: This hashmap stores the cards for the dealer.
+Our project(Eram, Peter, Faez) was to implement blackjack, a card game using hashmaps and linked list(for chaining). We implemented three hashmaps with the following roles:<br> Deck : This hashmap stores a key and a linked list. The goal of this map is to store the values of the deck <br> Players: This hashmap stores the cards of the players <br> Scoreboard: This hashmap stores the values of the scoreboard. <br>Dealer: This hashmap stores the cards for the dealer.
 
 The linked list class we use is from homework 3. We used the textbooks' implementation of hashmaps for our map. Eventually, we realized that because our insert and remove required different actions, we changed our functions.
 <br>
@@ -17,4 +17,7 @@ My contributions for the project is as follows:<br>
 *Setting up the deck<br>
 *Testing implementation<br>
 
-Our sources for the project are: Data Structures and Other Objects Using C++ book, Google, Stack Overflow
+Our sources for the project are: Data Structures and Other Objects Using C++ book, Google, Stack Overflow.
+
+The link to our project is :
+https://github.com/EramM805/FinalProjectCSC212
