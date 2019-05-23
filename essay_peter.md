@@ -1,4 +1,4 @@
-#Project: Blackjack
+# Project: Blackjack
 
 <d6>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
@@ -15,7 +15,7 @@ The objective of this project was to implement a chained hash table for the crea
 <d9>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; In the file, table.h, the chained hash table, called “Card,” was programmed to consist of an integer for the key and a linked list – Llist – for chaining the elements of the chained hash table. The linked list was created separately from the project and was utilized because it is customizable and offers versatility rather than the use of standard library data structures. The methods for the linked list class such as append(), search(), insert(), locate(), remove(), remove_tail(), length(), and clear() have a time complexity of O(n). The time complexity for the copy() function has a time complexity of O(2n), while the time complexity for the operator for [] is O(n). As for the functions that perform operations on the chained hash table located in the blackjack program, the time complexities for removetail(), setup(), sum(), scoreboard(), and show_player_hand() are O(n). The distribution functions have varying time complexities because it requires a randomly generated number that is also present in the deck; however, the functions initial_distribute() and initial_distribute_dealer() predominantly have a time complexity of O(2n), while the functions distribute(), decision(), and decision_dealer() have time complexities of O(n). The instruct() function has a time complexity of O(8n) because it calls the previous functions. The access type is instant and has a time complexity of O(1), which is efficient in removing and adding elements between individual hash tables.
 </d9>
 
-###My Contributions: 
+### My Contributions: 
 -	Fixed and collaborated with Eram to create the removetail() and sum() functions.
 -	Created the initial distribution functions by utilizing the rand() function.
 -	Worked with Faez to the create the decision functions for the players and dealer.
@@ -24,3 +24,5 @@ The objective of this project was to implement a chained hash table for the crea
 -	Formed the show_player_hand() function to display the hands of each player.
 -	Adjusted and debugged functions throughout the program.
 -	Established ways of comparing dealer’s hand and the players’ hands.
+
+Link to Github Repository - https://github.com/EramM805/FinalProjectCSC212
